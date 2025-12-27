@@ -47,10 +47,41 @@ danieRTOS is a real-time operating system built from scratch for RISC-V 64-bit a
 - SMP PMP configuration
 - Fault isolation across cores
 
-## Prerequisites
+## Environment Setup
 
-- RISC-V GCC toolchain (`riscv64-unknown-elf-gcc`)
-- QEMU with RISC-V support (`qemu-system-riscv64`)
+### Ubuntu/Debian
+
+```bash
+# Install RISC-V toolchain
+sudo apt install gcc-riscv64-unknown-elf
+
+# Install QEMU
+sudo apt install qemu-system-misc
+
+# Verify installation
+riscv64-unknown-elf-gcc --version
+qemu-system-riscv64 --version
+```
+
+### macOS (Homebrew)
+
+```bash
+brew tap riscv-software-src/riscv
+brew install riscv-gnu-toolchain
+brew install qemu
+```
+
+### Windows (WSL2)
+
+Use WSL2 with Ubuntu, then follow the Ubuntu instructions above.
+
+### Requirements Summary
+
+| Tool | Command | Purpose |
+|------|---------|---------|
+| RISC-V GCC | `riscv64-unknown-elf-gcc` | Cross-compiler for RISC-V |
+| QEMU | `qemu-system-riscv64` | RISC-V emulator |
+| GDB | `riscv64-unknown-elf-gdb` | Debugger (optional) |
 
 ## Building and Running
 
